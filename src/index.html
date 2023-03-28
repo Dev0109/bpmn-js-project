@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>bpmn-js example</title>
+  <!-- for bpmn-js modeler, copy from node_modules -->
+  <link rel="stylesheet" href="assets/diagram-js.css" />
+  <link rel="stylesheet" href="assets/bpmn-js.css" />
+  <link rel="stylesheet" href="assets/bpmn-font/css/bpmn-embedded.css" />
+  <!-- for bpmn-js properties panel, refer to cdn -->
+  <link rel="stylesheet" href="https://unpkg.com/bpmn-js-properties-panel/dist/assets/properties-panel.css">
+</head>
+<body>
+  <div style="text-align: center";>
+    <button type="button" style="height:30px;" onclick="saveXML()"> Show in console</button>
+  </div>
+  <div style="display: flex">
+    <div id="canvas" style=" flex: 1 1 calc(100% - 300px); max-width: calc(100% - 300px); border: 1px solid #000; display: inline-block; margin:10px;"></div>
+    <div id="properties" style="flex: 0 0 300px;  width: 300px; height: 90vh; float:right"></div>
+  </div>
+  <script src="../dist/bundle.js"></script>
+</body>
+</html>

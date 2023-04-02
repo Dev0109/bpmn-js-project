@@ -1,13 +1,19 @@
 import BpmnViewer from 'bpmn-js';
 import BpmnModeler from 'bpmn-js/lib/Modeler';
 // import CamundaBpmnModdle from 'camunda-bpmn-moddle/resources/camunda.json'
+// import CamundaPlatformPropertiesProviderModule from 'camunda-bpmn-moddle/resources/camunda.json'
 import ActivitiBpmnModdle from 'activiti-bpmn-moddle/resources/activiti.json'
 import ActivitiExtensionModule from 'activiti-bpmn-moddle/lib'
 
 import {
   BpmnPropertiesPanelModule,
   BpmnPropertiesProviderModule,
-  // CamundaPlatformPropertiesProviderModule
+  CamundaPlatformPropertiesProviderModule,
+  CloudElementTemplatesPropertiesProviderModule,
+  CloudElementTemplatesValidator,
+  ElementTemplatesPropertiesProviderModule,
+  ZeebeDescriptionProvider,
+  ZeebePropertiesProviderModule
 } from 'bpmn-js-properties-panel';
 
 // const modeler = new BpmnModeler({
@@ -34,6 +40,12 @@ var modeler = new BpmnModeler({
   additionalModules: [
     BpmnPropertiesPanelModule,
     BpmnPropertiesProviderModule,
+    CamundaPlatformPropertiesProviderModule,
+    CloudElementTemplatesPropertiesProviderModule,
+    CloudElementTemplatesValidator,
+    ElementTemplatesPropertiesProviderModule,
+    ZeebeDescriptionProvider,
+    ZeebePropertiesProviderModule,
     ActivitiExtensionModule
   ],
   moddleExtensions: {

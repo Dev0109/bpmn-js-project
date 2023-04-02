@@ -28,7 +28,7 @@
       <bpmn:incoming>Flow_0x0pdgu</bpmn:incoming>
       <bpmn:outgoing>Flow_099ibao</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:userTask id="Activity_0cttcbw" name="Trainer Review" camunda:assignee="ryanyeh">
+    <bpmn:userTask id="Activity_0cttcbw" name="Trainer Review" activiti:assignee="ryanyeh">
       <extensionElements>
         <activiti:formProperty id="textField" name="Text Field" type="string" />
         <activiti:formProperty id="numericField" name="Numeric Field" type="long" />

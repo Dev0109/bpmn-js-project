@@ -1,14 +1,32 @@
 import BpmnViewer from 'bpmn-js';
 import BpmnModeler from 'bpmn-js/lib/Modeler';
-import CamundaBpmnModdle from 'camunda-bpmn-moddle/resources/camunda.json'
+// import CamundaBpmnModdle from 'camunda-bpmn-moddle/resources/camunda.json'
+import ActivitiBpmnModdle from 'activiti-bpmn-moddle/resources/activiti.json'
+import ActivitiExtensionModule from 'activiti-bpmn-moddle/lib'
 
 import {
   BpmnPropertiesPanelModule,
   BpmnPropertiesProviderModule,
-  CamundaPlatformPropertiesProviderModule
+  // CamundaPlatformPropertiesProviderModule
 } from 'bpmn-js-properties-panel';
 
-const modeler = new BpmnModeler({
+// const modeler = new BpmnModeler({
+//   container: '#canvas',
+//   propertiesPanel: {
+//     parent: '#properties'
+//   },
+//   additionalModules: [
+//     BpmnPropertiesPanelModule,
+//     BpmnPropertiesProviderModule,
+//     CamundaPlatformPropertiesProviderModule
+//   ],
+//   moddleExtensions: {
+//     camunda: CamundaBpmnModdle.associations,
+//     activiti:  ActivitiBpmnModdle
+//   }
+// });
+
+var modeler = new BpmnModeler({
   container: '#canvas',
   propertiesPanel: {
     parent: '#properties'
@@ -16,15 +34,15 @@ const modeler = new BpmnModeler({
   additionalModules: [
     BpmnPropertiesPanelModule,
     BpmnPropertiesProviderModule,
-    CamundaPlatformPropertiesProviderModule
+    ActivitiExtensionModule
   ],
   moddleExtensions: {
-    camunda: CamundaBpmnModdle
+    activiti: ActivitiBpmnModdle
   }
 });
 
 
-fetch('bpmn/diagramDefault.bpmn').then(response => {
+fetch('bpmn/diagramWithActiviti.bpmn').then(response => {
   response.text().then(data => {
     modeler.importXML(data, function(err) {
       if (err) {
